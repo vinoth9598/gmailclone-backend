@@ -5,11 +5,13 @@ const cors = require('cors');
 const emailRouter = require('./controller/emails');
 const userRouter = require('./controller/register');
 const draftRouter = require('./controller/draft');
-
+const dashRouter = require('./controller/dashboard');
 // middleware 
 app.use(express.json());
 app.use(cors());
 
+
+app.use('/',dashRouter);
 app.use('/register',userRouter);
 app.use('/login',loginRouter);
 app.use('/email',emailRouter);
